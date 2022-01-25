@@ -1,5 +1,6 @@
 load('Procedure_1.mat');
-
+%the code works better if we subset x to remove the last sample.
+% x = x(1:end-1);
 signal_length = length(x);
 
 %subtract 1 from number of samples to account for t = 0
@@ -62,4 +63,8 @@ plot(time_domain(end-300:end), x_combine(end-300:end), 'b')
 
 %plotting the two signals seems to suggest we're pretty close. there's a
 %few artifacts but overall looks reasonably correct.
+%this is unnecessary if we subset x to remove the last sample, justifying
+%our assumption that it's due to having an odd number of samples
+
+
 
